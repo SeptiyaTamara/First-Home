@@ -4,7 +4,6 @@ import './Custom.css'; //import cssnya
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { appendFile } from 'fs';
-import * as serviceWorker './serviceWorker';
 
 //const items = ['Merah','Kuning','Hijau','Biru'];
 
