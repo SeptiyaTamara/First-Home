@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
      // active : "Merah",
      color: 'Merah',
-     img: 'apel.jpg'
+     img: 'Panas.jpg'
     };
   }
   clicked(menu){
