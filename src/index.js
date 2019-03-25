@@ -11,7 +11,7 @@ const items = [
   {
     name : "Summer",
     color : 'Merah',
-    img :'Panas.jpg'
+    img :'panas.jpg'
   },
   {
     name : "Auntum",
