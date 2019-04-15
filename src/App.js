@@ -21,6 +21,35 @@ class App extends Component {
       //active: menu,
     });
   }
+  info(name){
+    //console.log(name);
+    if (name == 'Calculator'){
+      //displaY CALC
+      return(
+        <div>
+          <span className={"selected "+this.state.color}>{this.state.name}
+          </span><br/><br/>
+          <input type="text" placeholder="angka 1" />+
+          <input type="text" placeholder="angka 2" />=
+          <span>...</span><br/><br/>
+          <button>Hitung</button>
+        </div>
+  
+      );
+    }else{
+      //display default
+      return(
+      <div>
+      Ini adalah <span className = {"selected "+this.state.color}>
+      {this.state.name}</span> <br></br>
+      <br></br>
+    <img src={this.state.img} width="200"></img>
+    {/*{this.menusaya()}*/}
+    </div>
+      );
+    }
+  
+  }
  /* menusaya(){
     return <img src={this.state.active+".jpg"} width="200"></img>
   }*/
@@ -62,15 +91,10 @@ class App extends Component {
         )}
         </nav>
 
-        <div className = "info">
-          Ini adalah <span className = {"selected "+this.state.color}>
-          {this.state.name}</span> <br></br>
-          <br></br>
-        <img src={this.state.img} width="200"></img>
-        {/*{this.menusaya()}*/}
+        <div className="info">
+        {this.info(this.state.name)}
         </div>
-
-        
+      
       </div>
     );
   }
