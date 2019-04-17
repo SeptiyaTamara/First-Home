@@ -29,7 +29,13 @@ class App extends Component {
         <div>
           <span className={"selected "+this.state.color}>{this.state.name}
           </span><br/><br/>
-          <input type="text" placeholder="angka 1" />+
+          <input type="text" placeholder="angka 1" />
+          <select ref="operator" className="from-control">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        </select>
           <input type="text" placeholder="angka 2" />=
           <span>...</span><br/><br/>
           <button>Hitung</button>
