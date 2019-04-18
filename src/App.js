@@ -8,8 +8,9 @@ class App extends Component {
 
     this.state = {
      // active : "Merah",
+     name: 'Summer',
      color: 'Merah',
-     img: 'Panas.jpg'
+     img: 'Panas.jpg',
     };
   }
   clicked(menu){
@@ -18,6 +19,9 @@ class App extends Component {
       name: menu.name,
       color: menu.color,
       img: menu.img,
+      angka1: 0,
+     angka2: 0
+
       //active: menu,
     });
   }
@@ -29,15 +33,16 @@ class App extends Component {
         <div>
           <span className={"selected "+this.state.color}>{this.state.name}
           </span><br/><br/>
-          <input type="text" placeholder="angka 1" />
-          <select ref="operator" className="from-control">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
+          <input type="number" name="angka1" placeholder="angka 1" value={this.state.angka1} onChange={this.changeHandler.bind(this)}/>
+          <select ref="operator" onChange={this.changeHandler.bind(this)}>
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="pow">*</option>
+        <option value="div">/</option>
         </select>
-          <input type="text" placeholder="angka 2" />=
-          <span>...</span><br/><br/>
+          <input type="number" name="angka 2" placeholder="angka 2" value={this.state.angka2 } onChange={this.changeHandler.bind(this)}/>=
+          <span>{parseInt(this.state.angka1) + parseInt(this.state.angka2)}</span><br/><br/>
+          <span>{this.hitung()}</span>
           <button>Hitung</button>
         </div>
   
@@ -56,6 +61,17 @@ class App extends Component {
     }
   
   }
+  changeHandler(event){
+  //   this.setState({
+  //   angka1: event.target.value,
+  // });
+  // }
+  this.state({
+    [event.target.name]: event.target.value
+  });
+}
+
+hitung()
  /* menusaya(){
     return <img src={this.state.active+".jpg"} width="200"></img>
   }*/

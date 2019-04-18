@@ -59,6 +59,9 @@
   .Biru.is-active {
     background: #41aff4;
   }
+  .Orange.is-active {
+    background: #ff6a00;
+  }
 
   .info {
     margin-top: 40px;
@@ -90,6 +93,10 @@
 
   .Biru.selected {
     background: #41aff4;
+  }
+
+  .Orange.selected {
+    background: #ff6a00;
   }
 
  /* .pic {
