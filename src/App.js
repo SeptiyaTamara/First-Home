@@ -71,7 +71,15 @@ class App extends Component {
   });
 }
 
-hitung()
+hitung(){
+  switch(this.state.operation){
+    case 'plus': return parseInt(this.state.angka1) + parseInt(this.state.angka2);
+    case 'minus': return parseInt(this.state.angka1) - parseInt(this.state.angka2);
+    case 'pow': return parseInt(this.state.angka1) * parseInt(this.state.angka2);
+    case 'div': return parseInt(this.state.angka1) / parseInt(this.state.angka2);
+
+  }
+}
  /* menusaya(){
     return <img src={this.state.active+".jpg"} width="200"></img>
   }*/
