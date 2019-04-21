@@ -11,6 +11,9 @@ class App extends Component {
      name: 'Summer',
      color: 'Merah',
      img: 'Panas.jpg',
+     angka1: 0,
+     angka2: 0,
+     operation: 'plus'
     };
   }
   clicked(menu){
@@ -19,8 +22,7 @@ class App extends Component {
       name: menu.name,
       color: menu.color,
       img: menu.img,
-      angka1: 0,
-     angka2: 0
+      
 
       //active: menu,
     });
@@ -38,11 +40,11 @@ class App extends Component {
         <option value="plus">+</option>
         <option value="minus">-</option>
         <option value="pow">*</option>
-        <option value="div">/</option>
+        <option value="div">:</option>
         </select>
           <input type="number" name="angka 2" placeholder="angka 2" value={this.state.angka2 } onChange={this.changeHandler.bind(this)}/>=
           <span>{parseInt(this.state.angka1) + parseInt(this.state.angka2)}</span><br/><br/>
-          <span>{this.hitung()}</span>
+          <span> {this.hitung()} </span>
           <button>Hitung</button>
         </div>
   
@@ -61,15 +63,15 @@ class App extends Component {
     }
   
   }
-  changeHandler(event){
-  //   this.setState({
-  //   angka1: event.target.value,
-  // });
-  // }
-  this.state({
-    [event.target.name]: event.target.value
-  });
-}
+  changeHandler(event) {
+    
+    // this.setState({
+    //   angka1: event.target.value
+    // });
+    this.setState({
+      [event.target.name]: event.target.value 
+    });
+  }
 
 hitung(){
   switch(this.state.operation){
