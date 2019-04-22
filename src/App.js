@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Profile from './Profile.js';
+import Calculator from './Calculator';
 import './App.css';
 
 class App extends Component {
@@ -12,9 +13,9 @@ class App extends Component {
      name: 'Summer',
      color: 'Merah',
      img: 'Panas.jpg',
-     angka1: 0,
-     angka2: 0,
-     operation: 'plus'
+    //  angka1: 0,
+    //  angka2: 0,
+    //  operation: 'plus'
     };
   }
   clicked(menu){
@@ -32,20 +33,21 @@ class App extends Component {
     //console.log(name);
     if (name == 'Calculator'){
       //displaY CALC
-      return(
-        <div>
-        <span className={"selected "+this.state.color}>{this.state.name}  </span><br/><br/>
-        <input type="number" name="angka1" placeholder="angka 1"  value={this.state.angka1} onChange={this.changeHandler.bind(this)}/>
-        <select name="operation" onChange={this.changeHandler.bind(this)}>
-          <option value="plus">+</option>
-          <option value="minus">-</option>
-          <option value="pow">x</option>
-          <option value="div">:</option>
-        </select>
-        <input type="number" name="angka2" placeholder="angka 2"  value={this.state.angka2} onChange={this.changeHandler.bind(this)}/>=
-        <span> {this.hitung()}</span>
-      </div>
-      );
+     // return(
+      //   <div>
+      //   <span className={"selected "+this.state.color}>{this.state.name}  </span><br/><br/>
+      //   <input type="number" name="angka1" placeholder="angka 1"  value={this.state.angka1} onChange={this.changeHandler.bind(this)}/>
+      //   <select name="operation" onChange={this.changeHandler.bind(this)}>
+      //     <option value="plus">+</option>
+      //     <option value="minus">-</option>
+      //     <option value="pow">x</option>
+      //     <option value="div">:</option>
+      //   </select>
+      //   <input type="number" name="angka2" placeholder="angka 2"  value={this.state.angka2} onChange={this.changeHandler.bind(this)}/>=
+      //   <span> {this.hitung()}</span>
+      // </div>
+     //);
+     return <Calculator></Calculator>;
     }else if(name == 'Profile'){
       //display profile
      return <Profile> </Profile>;
@@ -63,24 +65,24 @@ class App extends Component {
     }
   
   }
-  changeHandler(event) {
+  // changeHandler(event) {
     
-    // this.setState({
-    //   angka1: event.target.value
-    // });
-    this.setState({
-      [event.target.name]: event.target.value 
-    });
-  }
+  //   // this.setState({
+  //   //   angka1: event.target.value
+  //   // });
+  //   this.setState({
+  //     [event.target.name]: event.target.value 
+  //   });
+  // }
 
-  hitung(){
-    switch(this.state.operation){
-      case 'plus': return parseInt(this.state.angka1) + parseInt(this.state.angka2);
-      case 'minus': return parseInt(this.state.angka1) - parseInt(this.state.angka2)
-      case 'pow': return parseInt(this.state.angka1) * parseInt(this.state.angka2)
-      case 'div': return parseInt(this.state.angka1) / parseInt(this.state.angka2)
-    }
-  }
+  // hitung(){
+  //   switch(this.state.operation){
+  //     case 'plus': return parseInt(this.state.angka1) + parseInt(this.state.angka2);
+  //     case 'minus': return parseInt(this.state.angka1) - parseInt(this.state.angka2)
+  //     case 'pow': return parseInt(this.state.angka1) * parseInt(this.state.angka2)
+  //     case 'div': return parseInt(this.state.angka1) / parseInt(this.state.angka2)
+  //   }
+  // }
  /* menusaya(){
     return <img src={this.state.active+".jpg"} width="200"></img>
   }*/
