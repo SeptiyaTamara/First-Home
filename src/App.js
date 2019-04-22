@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Profile from './Profile.js';
 import './App.css';
 
 class App extends Component {
@@ -33,22 +34,21 @@ class App extends Component {
       //displaY CALC
       return(
         <div>
-          <span className={"selected "+this.state.color}>{this.state.name}
-          </span><br/><br/>
-          <input type="number" name="angka1" placeholder="angka 1" value={this.state.angka1} onChange={this.changeHandler.bind(this)}/>
-          <select ref="operator" onChange={this.changeHandler.bind(this)}>
-        <option value="plus">+</option>
-        <option value="minus">-</option>
-        <option value="pow">*</option>
-        <option value="div">:</option>
+        <span className={"selected "+this.state.color}>{this.state.name}  </span><br/><br/>
+        <input type="number" name="angka1" placeholder="angka 1"  value={this.state.angka1} onChange={this.changeHandler.bind(this)}/>
+        <select name="operation" onChange={this.changeHandler.bind(this)}>
+          <option value="plus">+</option>
+          <option value="minus">-</option>
+          <option value="pow">x</option>
+          <option value="div">:</option>
         </select>
-          <input type="number" name="angka 2" placeholder="angka 2" value={this.state.angka2 } onChange={this.changeHandler.bind(this)}/>=
-          <span>{parseInt(this.state.angka1) + parseInt(this.state.angka2)}</span><br/><br/>
-          <span> {this.hitung()} </span>
-          <button>Hitung</button>
-        </div>
-  
+        <input type="number" name="angka2" placeholder="angka 2"  value={this.state.angka2} onChange={this.changeHandler.bind(this)}/>=
+        <span> {this.hitung()}</span>
+      </div>
       );
+    }else if(name == 'Profile'){
+      //display profile
+     return <Profile> </Profile>;
     }else{
       //display default
       return(
@@ -73,15 +73,14 @@ class App extends Component {
     });
   }
 
-hitung(){
-  switch(this.state.operation){
-    case 'plus': return parseInt(this.state.angka1) + parseInt(this.state.angka2);
-    case 'minus': return parseInt(this.state.angka1) - parseInt(this.state.angka2);
-    case 'pow': return parseInt(this.state.angka1) * parseInt(this.state.angka2);
-    case 'div': return parseInt(this.state.angka1) / parseInt(this.state.angka2);
-
+  hitung(){
+    switch(this.state.operation){
+      case 'plus': return parseInt(this.state.angka1) + parseInt(this.state.angka2);
+      case 'minus': return parseInt(this.state.angka1) - parseInt(this.state.angka2)
+      case 'pow': return parseInt(this.state.angka1) * parseInt(this.state.angka2)
+      case 'div': return parseInt(this.state.angka1) / parseInt(this.state.angka2)
+    }
   }
-}
  /* menusaya(){
     return <img src={this.state.active+".jpg"} width="200"></img>
   }*/
