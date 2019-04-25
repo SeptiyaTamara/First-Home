@@ -8,7 +8,10 @@ class Profile extends Component {
   
   render() {
     return (
-        <img src="Irene.jpg" width="200" height="250"/>    
+      <div>
+        <p>{this.props.name}</p><br/>
+        <img src="Irene.jpg" width="200" height="250"/>  
+       </div> 
     );
   }
 }

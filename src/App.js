@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Profile from './Profile.js';
-import Calculator from './Calculator';
+import Calculator from './Calculator.js';
 import './App.css';
 
 class App extends Component {
@@ -50,7 +50,7 @@ class App extends Component {
      return <Calculator></Calculator>;
     }else if(name == 'Profile'){
       //display profile
-     return <Profile> </Profile>;
+     return <Profile name="Bae Joo Hyun <3"> </Profile>;
     }else{
       //display default
       return(
