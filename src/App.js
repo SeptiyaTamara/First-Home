@@ -4,6 +4,9 @@ import Profile from './Profile.js';
 import Calculator from './Calculator.js';
 import './App.css';
 
+
+
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -17,6 +20,7 @@ class App extends Component {
     //  angka2: 0,
     //  operation: 'plus'
     };
+    
   }
   clicked(menu){
     //untuk memperbarui state sesuai dengan menu yang dipilih
@@ -50,7 +54,7 @@ class App extends Component {
      return <Calculator></Calculator>;
     }else if(name == 'Profile'){
       //display profile
-     return <Profile name="Bae Joo Hyun <3"> </Profile>;
+     return <Profile name="IRENE"> </Profile>;
     }else{
       //display default
       return(
